@@ -10,8 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # أساسية
-  google_fonts: ^6.1.0 # أو أحدث إصدار متاح
+  google_fonts: ^6.1.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   path_provider: ^2.1.1
@@ -27,10 +26,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
-  # توليد الـ Hive adapter
   hive_generator: ^2.0.1
   build_runner: ^2.4.6
+  flutter_launcher_icons: ^0.13.1   # ← الحل هنا
 
 flutter:
   uses-material-design: true
@@ -38,7 +36,7 @@ flutter:
   assets:
     - assets/flags/
     - assets/images/
-    - assets/icon/   # تأكد من وجود ملف أيقونة داخل هذا المجلد
+    - assets/icon/
 
   fonts:
     - family: Cairo
@@ -51,8 +49,7 @@ flutter:
         - asset: assets/fonts/Cairo-Light.ttf
           weight: 300
 
-# إعداد flutter_launcher_icons (تم نقله إلى dev_dependencies)
-flutter_launcher_icons: 
+flutter_launcher_icons:
   android: true
   ios: true
   image_path: "assets/icon/app_icon.png"
