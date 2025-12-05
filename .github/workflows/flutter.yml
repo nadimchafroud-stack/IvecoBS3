@@ -1,1 +1,50 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.2'
+          channel: stable
+
+      - name: Flutter pub get
+        run: flutter pub get
+
+      - name: Flutter clean
+        run: flutter clean
+
+      - name: Generate Hive Models
+        run: flutter pub run build_runner build --delete-conflicting-outputs
+
+      # تشغيل flutter_launcher_icons بدون فشل حتى لو لا يوجد ios/web
+      - name: Generate App Icons
+        run: |
+          echo "Running flutter_launcher_icons..."
+          flutter pub run flutter_launcher_icons || echo "launcher icons skipped"
+
+      - name: Flutter analyze (no fail)
+        run: flutter analyze || true
+
+      - name: Flutter build APK (Release)
+        run: flutter build apk --release
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: build/app/outputs/flutter-apk/app-release.apk
+
 
