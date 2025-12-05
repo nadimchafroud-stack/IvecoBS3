@@ -20,16 +20,25 @@ jobs:
           flutter-version: '3.27.2'
           channel: stable
 
-      - name: Flutter pub get
-        run: flutter pub get
+      - name: Cache Flutter packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
 
       - name: Flutter clean
         run: flutter clean
 
+      - name: Flutter pub get
+        run: flutter pub get
+
       - name: Generate Hive Models
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
-      # تشغيل flutter_launcher_icons بدون فشل حتى لو لا يوجد ios/web
+      # تشغيل flutter_launcher_icons بدون كسر ال CI
       - name: Generate App Icons
         run: |
           echo "Running flutter_launcher_icons..."
@@ -46,5 +55,3 @@ jobs:
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
-
-
