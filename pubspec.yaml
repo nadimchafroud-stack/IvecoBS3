@@ -1,0 +1,59 @@
+name: iveco_fault_guide
+description: Army Technical School IVECO Fault Code Guide.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # أساسية
+  google_fonts: ^6.1.0 # أو أحدث إصدار متاح
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.1
+  csv: ^5.0.2
+  image_picker: ^1.0.4
+  uuid: ^4.2.1
+  file_picker: 5.3.2
+  collection: ^1.18.0
+  flutter_svg: ^2.1.0
+  share_plus: ^10.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  # توليد الـ Hive adapter
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.6
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/flags/
+    - assets/images/
+    - assets/icon/   # تأكد من وجود ملف أيقونة داخل هذا المجلد
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Light.ttf
+          weight: 300
+
+# إعداد flutter_launcher_icons (تم نقله إلى dev_dependencies)
+flutter_launcher_icons: 
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  remove_alpha_ios: true
