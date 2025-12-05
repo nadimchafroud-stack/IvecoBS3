@@ -124,13 +124,13 @@ class AboutScreen extends StatelessWidget {
 
               // ─────────── الأشخاص المشاركين ───────────
               _personRow(context, 'assets/images/na.jpg',
-                  "العريف أول نديم شفرود — تابع للفوج 15"),
+                  "العريف أول نديم شفرود — تابع للفوج 15 مشاة ميكانيكية"),
               const SizedBox(height: 20),
               _personRow(context, 'assets/images/fi.jpg',
-                  "العريف أول فراس البريني — ..."),
+                  "العريف أول فراس البريني  — تابع لمجمع الاسناد العام بالقاعدة العسكرية بباجة"),
               const SizedBox(height: 20),
               _personRow(context, 'assets/images/ka.jpg',
-                  "العريف أول قاسم بالحاج براهيم — ..."),
+                  "العريف أول قاسم بالحاج براهيم —تابع لاركان جيش الطيران"),
 
               const SizedBox(height: 20),
             ],
