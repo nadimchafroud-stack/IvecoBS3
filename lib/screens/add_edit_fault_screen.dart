@@ -4,7 +4,7 @@ import 'package:uuid/uuid.dart';
 import '../models/fault_code.dart';
 import '../services/hive_service.dart';
 import '../services/image_handler.dart';
-import '../widgets/industrial_panel.dart'; // استيراد الويدجت الصناعي
+import '../widgets/industrial_panel.dart';
 
 class AddEditFaultScreen extends StatefulWidget {
   final FaultCode? fault;
@@ -16,7 +16,7 @@ class AddEditFaultScreen extends StatefulWidget {
 
 class _AddEditFaultScreenState extends State<AddEditFaultScreen> {
   final _codeController = TextEditingController();
-  final _truckModelController = TextEditingController();
+  final _truckModelController = TextEditingController(); // ❗ يبقى كما هو
   final _descArController = TextEditingController();
   final _descEnController = TextEditingController();
   final _descFrController = TextEditingController();
@@ -26,13 +26,26 @@ class _AddEditFaultScreenState extends State<AddEditFaultScreen> {
   String _severity = 'Low';
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  final List<String> ecuList = [
+    'ECU المحرك (Engine Control Unit)',
+    'ECU ناقل الحركة (Transmission Control Unit)',
+    'ECU نظام الفرامل (ABS / EBS)',
+    'ECU نظام التعليق',
+    'ECU النظام الكهربائي',
+    'ECU نظام الوقود',
+    'ECU نظام التبريد',
+    'ECU نظام العادم',
+    'ECU الهيكل (Body Control Module)',
+    'ECU الاتصالات العسكرية',
+  ];
+
   @override
   void initState() {
     super.initState();
     if (widget.fault != null) {
       final f = widget.fault!;
       _codeController.text = f.code;
-      _truckModelController.text = f.truckModel;
+      _truckModelController.text = f.truckModel; // 👈 نفس الحقل
       _descArController.text = f.descAr;
       _descEnController.text = f.descEn;
       _descFrController.text = f.descFr;
@@ -53,7 +66,6 @@ class _AddEditFaultScreenState extends State<AddEditFaultScreen> {
     super.dispose();
   }
 
-  /// عنصر Input عام مناسب للثيم الموحد
   Widget _field(TextEditingController c, String label, {int max = 1}) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
@@ -62,40 +74,27 @@ class _AddEditFaultScreenState extends State<AddEditFaultScreen> {
     return TextFormField(
       controller: c,
       maxLines: max,
-      // تطبيق ستايل النص الأساسي من الثيم
       style: text.bodyLarge?.copyWith(color: cs.onSurface),
       decoration: InputDecoration(
         labelText: label,
-        // تغيير لون labelText ليتناسب مع الثيم الداكن
         labelStyle: text.bodyMedium?.copyWith(
           color: cs.onSurface.withOpacity(0.7),
         ),
-
-        // ⭐⭐ التعديل الموحد للثيم الصناعي: ⭐⭐
         filled: true,
-        fillColor: cs.surface, // خلفية داكنة للحقل
-
-        // إطار حاد عند عدم التركيز
+        fillColor: cs.surface,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide:
               BorderSide(color: cs.onSurface.withOpacity(0.1), width: 1),
         ),
-
-        // إطار التركيز الأصفر القوي
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(
-              color: cs.primary, width: 2.5), // الحدود الصفراء البارزة
+          borderSide: BorderSide(color: cs.primary, width: 2.5),
         ),
-
-        // الحدود الافتراضية
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
         ),
-        // ⭐⭐⭐ نهاية التعديل ⭐⭐⭐
       ),
-      // إضافة تحقق بسيط للعناصر الأساسية
       validator: (value) {
         if (max == 1 && (value == null || value.trim().isEmpty)) {
           return 'هذا الحقل مطلوب';
@@ -105,64 +104,27 @@ class _AddEditFaultScreenState extends State<AddEditFaultScreen> {
     );
   }
 
-  Future<void> _pickImage() async {
-    final path = await ImageHandler.pickImage();
-    if (path != null) {
-      setState(() => _imagePath = path);
-    }
-  }
-
-  bool _existsFault(String code, String model) {
-    final all = HiveService.getAllFaultCodes();
-    // التحقق أثناء الإضافة فقط، وليس التعديل
-    if (widget.fault != null &&
-        widget.fault!.code == code &&
-        widget.fault!.truckModel == model) {
-      return false;
-    }
-    return all.any((f) => f.code == code && f.truckModel == model);
-  }
-
   Future<void> _saveFault() async {
-    final code = _codeController.text.trim();
-    final model = _truckModelController.text.trim();
-    final cs = Theme.of(context).colorScheme;
-
-    if (!_formKey.currentState!.validate()) {
-      return;
-    }
-
-    if (_existsFault(code, model)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: cs.error,
-          content: const Text("هذا الكود موجود بالفعل لنفس الموديل"),
-        ),
-      );
-      return;
-    }
+    if (!_formKey.currentState!.validate()) return;
 
     final fault = FaultCode(
       id: widget.fault?.id ?? const Uuid().v4(),
-      code: code,
-      truckModel: model,
+      code: _codeController.text.trim(),
+      truckModel: _truckModelController.text.trim(), // 👈 نفس الاسم
       descAr: _descArController.text.trim(),
       descEn: _descEnController.text.trim(),
       descFr: _descFrController.text.trim(),
       possibleCauses: _causesController.text
           .split('\n')
-          .map((s) => s.trim())
-          .where((s) => s.isNotEmpty)
+          .where((e) => e.trim().isNotEmpty)
           .toList(),
       imagePath: _imagePath,
       severity: _severity,
     );
 
-    if (widget.fault == null) {
-      await HiveService.addFaultCode(fault);
-    } else {
-      await HiveService.updateFaultCode(fault);
-    }
+    widget.fault == null
+        ? await HiveService.addFaultCode(fault)
+        : await HiveService.updateFaultCode(fault);
 
     if (!mounted) return;
     Navigator.pop(context);
@@ -190,53 +152,23 @@ class _AddEditFaultScreenState extends State<AddEditFaultScreen> {
             style: text.displayMedium,
           ),
           centerTitle: true,
-          // إضافة زر حفظ عند التعديل لسهولة الوصول (اختياري)
-          actions: widget.fault != null
-              ? [
-                  IconButton(
-                    icon: Icon(Icons.save, color: cs.primary),
-                    onPressed: _saveFault,
-                  )
-                ]
-              : null,
         ),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(18),
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                /// حقول الإدخال
                 _field(_codeController, "رمز العطل"),
                 const SizedBox(height: 15),
 
-                _field(_truckModelController, "نوع الشاحنة"),
-                const SizedBox(height: 15),
-
-                _field(_descArController, "الوصف عربي", max: 3),
-                const SizedBox(height: 15),
-
-                _field(_descEnController, "الوصف إنجليزي", max: 3),
-                const SizedBox(height: 15),
-
-                _field(_descFrController, "الوصف فرنسي", max: 3),
-                const SizedBox(height: 15),
-
-                _field(_causesController, "الأسباب (سطر لكل سبب)", max: 5),
-                const SizedBox(height: 15),
-
-                // مستوى الخطورة (Dropdown) - تم توحيد الستايل
+                /// ✅ Dropdown ECU (بديل نوع الشاحنة)
                 DropdownButtonFormField<String>(
-                  value: _severity,
+                  value: _truckModelController.text.isNotEmpty
+                      ? _truckModelController.text
+                      : null,
                   decoration: InputDecoration(
-                    labelText: "مستوى الخطورة",
-                    labelStyle: text.bodyMedium?.copyWith(
-                      color: cs.onSurface.withOpacity(0.7),
-                    ),
-                    suffixIcon: Icon(Icons.arrow_drop_down, color: cs.primary),
-
-                    // ⭐ توحيد تنسيق DropdownButtonFormField
+                    labelText: "لوحة التحكم الإلكترونية (ECU)",
                     filled: true,
                     fillColor: cs.surface,
                     enabledBorder: OutlineInputBorder(
@@ -246,79 +178,34 @@ class _AddEditFaultScreenState extends State<AddEditFaultScreen> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: cs.primary, width: 2.5),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderSide:
+                          BorderSide(color: cs.primary, width: 2.5),
                     ),
                   ),
                   dropdownColor: cs.surface,
-                  style: text.bodyLarge?.copyWith(color: cs.onSurface),
-                  items: [
-                    DropdownMenuItem(
-                        value: 'Low',
-                        child: Text('Low',
-                            style: text.bodyLarge?.copyWith(
-                                color: const Color(0xFF64DD17)))), // أخضر
-                    DropdownMenuItem(
-                        value: 'Medium',
-                        child: Text('Medium',
-                            style: text.bodyLarge?.copyWith(
-                                color: const Color(0xFFFFD700)))), // أصفر
-                    DropdownMenuItem(
-                        value: 'High',
-                        child: Text('High',
-                            style: text.bodyLarge?.copyWith(
-                                color: const Color(0xFFFF5252)))), // أحمر
-                    DropdownMenuItem(
-                        value: 'Critical',
-                        child: Text('Critical',
-                            style: text.bodyLarge?.copyWith(
-                                color: const Color(0xFFF06292)))), // وردي
-                  ],
-                  onChanged: (v) => setState(() => _severity = v ?? 'Low'),
+                  items: ecuList
+                      .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(e, style: text.bodyLarge),
+                          ))
+                      .toList(),
+                  onChanged: (v) {
+                    _truckModelController.text = v ?? '';
+                  },
+                  validator: (v) =>
+                      v == null || v.isEmpty ? 'هذا الحقل مطلوب' : null,
                 ),
 
+                const SizedBox(height: 15),
+                _field(_descArController, "الوصف عربي", max: 3),
+                const SizedBox(height: 15),
+                _field(_descEnController, "الوصف إنجليزي", max: 3),
+                const SizedBox(height: 15),
+                _field(_descFrController, "الوصف فرنسي", max: 3),
+                const SizedBox(height: 15),
+                _field(_causesController, "الأسباب (سطر لكل سبب)", max: 5),
                 const SizedBox(height: 25),
 
-                // زر اختيار الصورة (أصفر وبارز)
-                SizedBox(
-                  height: 50,
-                  child: FilledButton.icon(
-                    onPressed: _pickImage,
-                    icon: const Icon(Icons.image, size: 24),
-                    label: Text(
-                        _imagePath != null ? "تغيير الصورة" : "اختيار صورة"),
-                    style: FilledButton.styleFrom(
-                      backgroundColor: cs.primary.withOpacity(0.1),
-                      foregroundColor: cs.primary,
-                      side: BorderSide(
-                          color: cs.primary, width: 1.5), // حدود صفراء
-                      elevation: 0,
-                    ),
-                  ),
-                ),
-
-                if (_imagePath != null) ...[
-                  const SizedBox(height: 20),
-                  // عرض الصورة داخل IndustrialPanel
-                  IndustrialPanel(
-                    isHighlighted: true,
-                    padding: const EdgeInsets.all(8),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.file(
-                        File(_imagePath!),
-                        height: 180,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ],
-
-                const SizedBox(height: 30),
-
-                // زر الحفظ الرئيسي
                 SizedBox(
                   height: 55,
                   child: ElevatedButton(
