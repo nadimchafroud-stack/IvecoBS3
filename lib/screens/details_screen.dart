@@ -145,7 +145,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          "درجة الخطورة: ${widget.fault.severity}",
+                          "  ${widget.fault.severity}",
                           style: text.bodyLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: severityTextColor(
