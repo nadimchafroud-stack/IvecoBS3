@@ -24,15 +24,6 @@ class MyApp extends StatelessWidget {
       scaffoldMessengerKey: scaffoldMessengerKey,
       debugShowCheckedModeBanner: false,
 
-      builder: (context, child) {
-        return MediaQuery.removePadding(
-          context: context,
-          removeTop: true,
-          child: child ?? const SizedBox.shrink(),
-        );
-      },
-
-      /// 👇 هنا التعديل الوحيد
       theme: AppTheme.theme,
 
       home: const SearchScreen(),
