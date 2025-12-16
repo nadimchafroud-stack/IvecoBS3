@@ -1,1 +1,72 @@
-
+[
+  {
+    "id": "1",
+    "code": "ECU-001",
+    "truckModel": "ECU المحرك (Engine Control Unit)",
+    "descAr": "خلل في حساس الضغط",
+    "descFr": "Défaillance du capteur de pression",
+    "descEn": "Pressure sensor malfunction",
+    "possibleCauses": [
+      "تلف الحساس",
+      "قطع في الأسلاك"
+    ],
+    "imagePath": "engine_ecu_001.png",
+    "severity": "High"
+  },
+  {
+    "id": "2",
+    "code": "ECU-002",
+    "truckModel": "ECU ناقل الحركة (Transmission Control Unit)",
+    "descAr": "خلل في ناقل الحركة",
+    "descFr": "Défaillance de la transmission",
+    "descEn": "Transmission malfunction",
+    "possibleCauses": [
+      "تلف المحرك الداخلي",
+      "نقص الزيت"
+    ],
+    "imagePath": "engine_ecu_001.png",
+    "severity": "Medium"
+  },
+  {
+    "id": "3",
+    "code": "ECU-003",
+    "truckModel": "ECU نظام الفرامل (ABS / EBS)",
+    "descAr": "خلل في ABS",
+    "descFr": "Défaillance ABS",
+    "descEn": "ABS malfunction",
+    "possibleCauses": [
+      "حساس التوازن معطل",
+      "قطع في الأسلاك"
+    ],
+    "imagePath": "engine_ecu_001.png",
+    "severity": "High"
+  },
+  {
+    "id": "4",
+    "code": "ECU-004",
+    "truckModel": "ECU النظام الكهربائي",
+    "descAr": "خلل في البطارية",
+    "descFr": "Défaillance batterie",
+    "descEn": "Battery malfunction",
+    "possibleCauses": [
+      "نقص شحن",
+      "تلف الموصلات"
+    ],
+    "imagePath": "engine_ecu_001.png",
+    "severity": "Low"
+  },
+  {
+    "id": "5",
+    "code": "ECU-005",
+    "truckModel": "ECU نظام الوقود",
+    "descAr": "خلل في مضخة الوقود",
+    "descFr": "Défaillance pompe à carburant",
+    "descEn": "Fuel pump malfunction",
+    "possibleCauses": [
+      "انسداد الوقود",
+      "تلف المضخة"
+    ],
+    "imagePath": "engine_ecu_001.png",
+    "severity": "Critical"
+  }
+]
