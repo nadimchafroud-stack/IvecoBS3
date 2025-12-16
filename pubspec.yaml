@@ -28,7 +28,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   hive_generator: ^2.0.1
   build_runner: ^2.4.6
-  flutter_launcher_icons: ^0.13.1   # ← الحل هنا
+  flutter_launcher_icons: ^0.13.1   # ← لأيقونة التطبيق
 
 flutter:
   uses-material-design: true
@@ -37,6 +37,7 @@ flutter:
     - assets/flags/
     - assets/images/
     - assets/icon/
+    - assets/data/fault_codes.json   # ← ملف JSON الافتراضي
 
   fonts:
     - family: Cairo
