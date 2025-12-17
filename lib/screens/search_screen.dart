@@ -136,7 +136,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       fontWeight: FontWeight.w600,
                     ),
                     hint: Text(
-                      "اختر نوع الشاحنة",
+                      "  اختر لوحة التحكم",
                       textDirection: TextDirection.rtl,
                       style: text.bodyLarge?.copyWith(
                         color: cs.onSurface.withOpacity(0.55),
@@ -264,7 +264,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                "درجة الخطورة: ${fault.severity}",
+                                "  ${fault.severity}",
                                 style: text.bodyLarge?.copyWith(
                                   color: const Color(0xFFF44336),
                                   fontWeight: FontWeight.bold,
