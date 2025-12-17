@@ -1,72 +1,1121 @@
 [
   {
-    "id": "1",
-    "code": "ECU-001",
-    "truckModel": "ECU المحرك (Engine Control Unit)",
-    "descAr": "خلل في حساس الضغط",
-    "descFr": "Défaillance du capteur de pression",
-    "descEn": "Pressure sensor malfunction",
+    "id": "ABS-40001-01",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "جهد الحساس منخفض جداً أو المسافة بين الحساس والترس (Gap) كبيرة جداً",
+    "descFr": "Tension du capteur trop faible ou entrefer trop grand",
+    "descEn": "Voltage too low or sensor gap too large",
     "possibleCauses": [
-      "تلف الحساس",
-      "قطع في الأسلاك"
+      "الحساس غير مثبت في مكانه",
+      "تلف في مثبت الحساس (Bushing)",
+      "تراكم الأوساخ على رأس الحساس"
     ],
-    "imagePath": "engine_ecu_001.png",
+    "imagePath": "40001.jpg",
     "severity": "High"
   },
   {
-    "id": "2",
-    "code": "ECU-002",
-    "truckModel": "ECU ناقل الحركة (Transmission Control Unit)",
-    "descAr": "خلل في ناقل الحركة",
-    "descFr": "Défaillance de la transmission",
-    "descEn": "Transmission malfunction",
+    "id": "ABS-40001-02",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "اختلاف في سرعة العجلات بنسبة > 10% (بسبب مقاس الإطارات أو ترس ABS)",
+    "descFr": "Différence de vitesse de roue > 10% (pneus ou roue polaire)",
+    "descEn": "Wheel speed difference > 10% (incorrect tyre or pole wheel)",
     "possibleCauses": [
-      "تلف المحرك الداخلي",
-      "نقص الزيت"
+      "مقاسات إطارات مختلفة على نفس المحور",
+      "عدد أسنان ترس ABS غير مطابق",
+      "انزلاق مستمر لأحد الإطارات"
     ],
-    "imagePath": "engine_ecu_001.png",
+    "imagePath": "40001.jpg",
     "severity": "Medium"
   },
   {
-    "id": "3",
-    "code": "ECU-003",
-    "truckModel": "ECU نظام الفرامل (ABS / EBS)",
-    "descAr": "خلل في ABS",
-    "descFr": "Défaillance ABS",
-    "descEn": "ABS malfunction",
+    "id": "ABS-40001-03",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "تماس كهربائي مع القطب الموجب (البطارية) في دائرة الحساس",
+    "descFr": "Court-circuit au positif détecté",
+    "descEn": "Short to Battery voltage detected",
     "possibleCauses": [
-      "حساس التوازن معطل",
-      "قطع في الأسلاك"
+      "تلف في عزل الأسلاك",
+      "تلامس السلك بجهد البطارية المباشر",
+      "عطل في وحدة التحكم"
     ],
-    "imagePath": "engine_ecu_001.png",
+    "imagePath": "40001.jpg",
     "severity": "High"
   },
   {
-    "id": "4",
-    "code": "ECU-004",
-    "truckModel": "ECU النظام الكهربائي",
-    "descAr": "خلل في البطارية",
-    "descFr": "Défaillance batterie",
-    "descEn": "Battery malfunction",
+    "id": "ABS-40001-04",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "تماس كهربائي مع الأرضي (ماس) في دائرة الحساس",
+    "descFr": "Court-circuit à la masse détecté",
+    "descEn": "Short to Ground detected",
     "possibleCauses": [
-      "نقص شحن",
-      "تلف الموصلات"
+      "احتكاك السلك بجسم الشاحنة",
+      "تلف عازل الضفيرة",
+      "رطوبة داخل فيشة التوصيل"
     ],
-    "imagePath": "engine_ecu_001.png",
+    "imagePath": "40001.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ABS-40001-05",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "انقطاع (دائرة مفتوحة) في دائرة حساس السرعة",
+    "descFr": "Circuit ouvert détecté",
+    "descEn": "Open circuit detected",
+    "possibleCauses": [
+      "قطع في أسلاك الحساس",
+      "فيشة الحساس غير متصلة",
+      "تلف الملف الداخلي للحساس"
+    ],
+    "imagePath": "40001.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ABS-40001-06",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "تماس كهربائي بين أسلاك الحساس نفسه",
+    "descFr": "Court-circuit entre les câbles du capteur",
+    "descEn": "Short circuit between sensor cables detected",
+    "possibleCauses": [
+      "تلف في عزل الزوج السلكي للحساس",
+      "تلامس الأسلاك داخل الضفيرة"
+    ],
+    "imagePath": "40001.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ABS-40001-07",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "تقطع دوري في الإشارة عند سرعة أعلى من 10 كم/س",
+    "descFr": "Perte de signal cyclique à plus de 10 km/h",
+    "descEn": "Cyclic drop out at speed higher than 10 km/h",
+    "possibleCauses": [
+      "ترس ABS (Pole Wheel) تالف أو به أسنان مكسورة",
+      "عدم استقامة الحساس أمام الترس",
+      "اهتزاز شديد في العجلة"
+    ],
+    "imagePath": "40001.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "ABS-40001-08",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "انزلاق طويل للعجلة أثناء عملية الفرملة",
+    "descFr": "Glissement prolongé de la roue pendant le freinage",
+    "descEn": "Long term wheel slip during braking",
+    "possibleCauses": [
+      "خلل في نظام المكابح الميكانيكي",
+      "إطارات متآكلة جداً",
+      "قراءة خاطئة من الحساس"
+    ],
+    "imagePath": "40001.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ABS-40001-09",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "عدد أسنان ترس الـ ABS غير متطابق أو خاطئ",
+    "descFr": "Nombre de dents de la roue polaire incorrect",
+    "descEn": "Incorrect number of pole wheel teeth",
+    "possibleCauses": [
+      "تركيب ترس ABS غير مخصص لهذا الموديل",
+      "تبديل أجزاء العجلة بقطع غير مطابقة"
+    ],
+    "imagePath": "40001.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ABS-40001-0A",
+    "code": "40001",
+    "truckModel": "ABS Wabco D",
+    "descAr": "توقف خروج إشارة من الحساس (Signal Drop out)",
+    "descFr": "Perte de signal du capteur",
+    "descEn": "Signal drop out",
+    "possibleCauses": [
+      "الحساس ابتعد كثيراً عن الترس أثناء السير",
+      "تراكم أوساخ تعيق الإشارة فجأة"
+    ],
+    "imagePath": "40001.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "ABS-40802-01",
+    "code": "40802",
+    "truckModel": "ABS Wabco D",
+    "descAr": "حساس السرعة (يمين أمامي): المسافة كبيرة جداً أو الجهد منخفض",
+    "descFr": "Capteur VD: Entrefer trop grand ou tension trop faible",
+    "descEn": "Right Front Sensor: Gap too large or voltage too low",
+    "possibleCauses": [
+        "الحساس ابتعد عن الترس", 
+        "تآكل في كراسي التحميل (الرومان بلي) للعجلة",
+        "اتساخ رأس الحساس"
+    ],
+    "imagePath": "40802.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ABS-40807-03",
+    "code": "40807",
+    "truckModel": "ABS Wabco D",
+    "descAr": "مشغل التعديل (Modulator) الأمامي الأيسر: تماس مع القطب الموجب",
+    "descFr": "Modulateur AV Gauche: Court-circuit au positif",
+    "descEn": "Left Front Modulator: Short to Battery voltage",
+    "possibleCauses": [
+        "تلف في الضفيرة الكهربائية للمشغل",
+        "عطل داخلي في صمام الموديلاتور"
+    ],
+    "imagePath": "40807.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "ABS-408FB-03",
+    "code": "408FB",
+    "truckModel": "ABS Wabco D",
+    "descAr": "ارتفاع الجهد الكهربائي المزود للوحدة (أكثر من 0.5 ثانية)",
+    "descFr": "Surtension de l'alimentation ABS",
+    "descEn": "ABS Supply Overvoltage",
+    "possibleCauses": [
+        "خلل في منظم الجهد بالمولد (الدينامو)",
+        "مشكلة في البطاريات"
+    ],
+    "imagePath": "408FB.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "BC-22103-01",
+    "code": "22103",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "خط الرفع 1 (Supply Line 1): الجهد خارج النطاق المسموح (18V-32V)",
+    "descFr": "Ligne d'alimentation 1: Tension hors plage",
+    "descEn": "Supply Line 1: Voltage out of range",
+    "possibleCauses": [
+        "ضعف في البطاريات",
+        "تآكل في أقطاب التوصيل الرئيسية",
+        "خلل في الدينامو"
+    ],
+    "imagePath": "22103.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "BC-22108-05",
+    "code": "22108",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "أضواء الإشارة اليمنى: دائرة مفتوحة (احتراق لمبة أو قطع سلك)",
+    "descFr": "Feux de direction Droite: Circuit ouvert",
+    "descEn": "Turn Lights Right: Open circuit (at least one load missing)",
+    "possibleCauses": [
+        "احتراق إحدى اللمبات اليمنى",
+        "انقطاع في سلك الإشارة المتجه للمصابيح"
+    ],
+    "imagePath": "22108.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22109-06",
+    "code": "22109",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "أضواء إشارة المقطورة اليمنى: تماس أرضي أو حمل زائد",
+    "descFr": "Feux de direction remorque Droite: Court-circuit ou surcharge",
+    "descEn": "Trailer Turn Lights Right: Short to ground or overload",
+    "possibleCauses": [
+        "تماس في فيشة المقطورة",
+        "استخدام لمبات ذات قدرة (وات) غير مطابقة"
+    ],
+    "imagePath": "22109.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "BC-22114-05",
+    "code": "22114",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "أضواء الموقف (الفيوز) واللوحة: دائرة مفتوحة",
+    "descFr": "Feux de position et plaque: Circuit ouvert",
+    "descEn": "Parking and Plate Lights: Open circuit",
+    "possibleCauses": [
+        "احتراق لمبات لوحة الأرقام",
+        "فصل فيشة المصابيح الخلفية"
+    ],
+    "imagePath": "22114.jpg",
     "severity": "Low"
   },
   {
-    "id": "5",
-    "code": "ECU-005",
-    "truckModel": "ECU نظام الوقود",
-    "descAr": "خلل في مضخة الوقود",
-    "descFr": "Défaillance pompe à carburant",
-    "descEn": "Fuel pump malfunction",
+    "id": "BC-2211F-01",
+    "code": "2211F",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "تعارض في مفاتيح الإشارة: تفعيل اليمين واليسار في وقت واحد",
+    "descFr": "Conflit des commutateurs de direction",
+    "descEn": "Turn Lights Switches conflict (both activated)",
     "possibleCauses": [
-      "انسداد الوقود",
-      "تلف المضخة"
+        "عطل ميكانيكي في ذراع الإشارات (الكومودو)",
+        "تماس كهربائي داخل لوحة المفاتيح"
     ],
-    "imagePath": "engine_ecu_001.png",
+    "imagePath": "2211F.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22120-04",
+    "code": "22120",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "فشل في شبكة اتصال البيانات CAN: غياب الرسائل",
+    "descFr": "Panne du bus de données CAN",
+    "descEn": "Vehicle Data Bus CAN: No messages or Bus-Off",
+    "possibleCauses": [
+        "قطع في أسلاك الـ CAN (الأخضر والأصفر عادة)",
+        "تداخل كهرومغناطيسي قوي",
+        "عطل في إحدى الوحدات المرتبطة بالشبكة"
+    ],
+    "imagePath": "22120.jpg",
     "severity": "Critical"
+  },
+  {
+    "id": "BC-22121-15",
+    "code": "22121",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "حساس مستوى زيت المحرك: البيانات غير متوفرة (الوقت/التاريخ)",
+    "descFr": "Interface niveau d'huile: Données non disponibles",
+    "descEn": "Engine Oil Level: Time/Date info not available",
+    "possibleCauses": [
+        "فقدان الاتصال مع وحدة EDC",
+        "عدم ضبط ساعة الشاحنة الرئيسية"
+    ],
+    "imagePath": "22121.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22122-03",
+    "code": "22122",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "حساس درجة حرارة الجو: الجهد مرتفع جداً (دائرة مفتوحة أو تماس مع الموجب)",
+    "descFr": "Capteur température air ambiant: Tension trop haute",
+    "descEn": "Ambient Air Temp Sensor: Voltage above normal / Open circuit",
+    "possibleCauses": [
+      "الحساس مفصول أو تالف",
+      "قطع في الضفيرة الواصلة للمصد الأمامي",
+      "تآكل في أطراف الفيشة"
+    ],
+    "imagePath": "22122.jpg",
+    "severity": "Low"
+  },
+  {
+    "id": "BC-22124-05",
+    "code": "22124",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "أضواء الضباب الخلفية: دائرة مفتوحة (احتراق اللمبات أو قطع سلك)",
+    "descFr": "Feux antibrouillard AR: Circuit ouvert",
+    "descEn": "Rear Fog Lights: Open circuit",
+    "possibleCauses": [
+      "احتراق لمبات الضباب الخلفية",
+      "تلف في الأسلاك الواصلة للمصابيح الخلفية"
+    ],
+    "imagePath": "22124.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22128-06",
+    "code": "22128",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "موتور مساحات الزجاج: تماس مع الأرضي (ماس كهربائي)",
+    "descFr": "Moteur essuie-glace: Court-circuit à la masse",
+    "descEn": "Windshield Wiper Motor: Short to ground",
+    "possibleCauses": [
+      "تلف داخلي في موتور المساحات",
+      "احتكاك أسلاك الموتور بهيكل الشاحنة",
+      "خلل في ريلي (Relay) المساحات"
+    ],
+    "imagePath": "22128.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "BC-2212C-01",
+    "code": "2212C",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "حساس ضغط الهواء (الدائرة 1): الإشارة خارج النطاق (مرتفعة جداً أو منخفضة جداً)",
+    "descFr": "Capteur pression d'air (C1): Signal hors plage",
+    "descEn": "Air Pressure Sensor (Circuit 1): Signal out of range",
+    "possibleCauses": [
+      "تلف حساس ضغط الهواء على الخزان",
+      "تسريب هواء شديد في الدائرة الأولى",
+      "خلل في توصيلات الحساس"
+    ],
+    "imagePath": "2212C.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "BC-2212D-01",
+    "code": "2212D",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "حساس ضغط الهواء (الدائرة 2): الإشارة غير منطقية أو خارج النطاق",
+    "descFr": "Capteur pression d'air (C2): Signal non plausible",
+    "descEn": "Air Pressure Sensor (Circuit 2): Signal out of range",
+    "possibleCauses": [
+      "عطل في حساس الخزان الثاني",
+      "مشكلة في أسلاك الإشارة الموصلة للكمبيوتر"
+    ],
+    "imagePath": "2212D.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "BC-22131-05",
+    "code": "22131",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "أضواء الضباب الأمامية: دائرة مفتوحة",
+    "descFr": "Feux antibrouillard AV: Circuit ouvert",
+    "descEn": "Front Fog Lights: Open circuit",
+    "possibleCauses": [
+      "احتراق اللمبات الأمامية",
+      "فيشة كشافات الضباب مفصولة"
+    ],
+    "imagePath": "22131.jpg",
+    "severity": "Low"
+  },
+  {
+    "id": "BC-22132-06",
+    "code": "22132",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "أضواء الضباب الأمامية: تماس كهربائي مع الأرضي (ماس)",
+    "descFr": "Feux antibrouillard AV: Court-circuit à la masse",
+    "descEn": "Front Fog Lights: Short to ground",
+    "possibleCauses": [
+      "سلك ملامس للهيكل خلف المصد الأمامي",
+      "دخول ماء إلى كشاف الضباب"
+    ],
+    "imagePath": "22132.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22135-05",
+    "code": "22135",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "ضوء الضباب الخلفي الأيسر: دائرة مفتوحة",
+    "descFr": "Feu antibrouillard AR Gauche: Circuit ouvert",
+    "descEn": "Left Rear Fog Light: Open circuit",
+    "possibleCauses": [
+      "احتراق اللمبة اليسرى",
+      "قطع في الضفيرة الخلفية جهة اليسار"
+    ],
+    "imagePath": "22135.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22136-06",
+    "code": "22136",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "ضوء الضباب الخلفي الأيسر: تماس أرضي أو حمل زائد",
+    "descFr": "Feu antibrouillard AR Gauche: Court-circuit à la masse",
+    "descEn": "Left Rear Fog Light: Short to ground",
+    "possibleCauses": [
+      "تماس في ضفيرة الفانوس الخلفي الأيسر",
+      "استخدام لمبة غير مطابقة"
+    ],
+    "imagePath": "22136.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "BC-22144-05",
+    "code": "22144",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "مصباح الإنارة الداخلي للكابينة: دائرة مفتوحة",
+    "descFr": "Éclairage intérieur: Circuit ouvert",
+    "descEn": "Interior Light: Open circuit",
+    "possibleCauses": [
+      "احتراق لمبة السقف",
+      "خلل في مفتاح الباب"
+    ],
+    "imagePath": "22144.jpg",
+    "severity": "Low"
+  },
+  {
+    "id": "BC-22149-06",
+    "code": "22149",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "مشغل قفل الكابينة (Cab Lock): تماس كهربائي مع الأرضي",
+    "descFr": "Actionneur de verrouillage cabine: Court-circuit à la masse",
+    "descEn": "Cab Lock Actuator: Short to ground",
+    "possibleCauses": [
+      "عطل في محرك قفل الكابينة",
+      "تماس في أسلاك نظام القفل مع جسم الشاحنة",
+      "خلل في وحدة التحكم المركزية"
+    ],
+    "imagePath": "22149.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22151-05",
+    "code": "22151",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "أضواء الضباب للمقطورة: دائرة مفتوحة (قطع في التوصيل)",
+    "descFr": "Feux antibrouillard remorque: Circuit ouvert",
+    "descEn": "Trailer Fog Lights: Open circuit",
+    "possibleCauses": [
+      "فيشة المقطورة غير متصلة بشكل جيد",
+      "احتراق لمبات الضباب في المقطورة",
+      "قطع في كابل التوصيل الحلزوني"
+    ],
+    "imagePath": "22151.jpg",
+    "severity": "Low"
+  },
+  {
+    "id": "EDC-10011-02",
+    "code": "10011",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "إشارة سرعة المركبة: إشارة غير صالحة أو غير منطقية",
+    "descFr": "Signal de vitesse du véhicule: Non valide",
+    "descEn": "Vehicle Speed Signal: Invalid signal",
+    "possibleCauses": [
+      "عطل في حساس السرعة (Tachograph Sensor)",
+      "تداخل في رسائل شبكة CAN الخاصة بالسرعة",
+      "محاولة التلاعب بجهاز التاكوغراف"
+    ],
+    "imagePath": "10011.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10012-04",
+    "code": "10012",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس دواسة الوقود (الخانق): لا توجد إشارة (Bus-Off)",
+    "descFr": "Capteur pédale d'accélérateur: Pas de signal",
+    "descEn": "Accelerator Pedal Sensor: No signal / Bus-Off",
+    "possibleCauses": [
+      "فصل فيشة دواسة الوقود",
+      "تلف في المسارات الكربونية داخل الدواسة",
+      "انقطاع أسلاك الاتصال بين الدواسة ووحدة EDC"
+    ],
+    "imagePath": "10012.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "EDC-10013-03",
+    "code": "10013",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس درجة حرارة مبرد المحرك (الراديتر): تماس مع القطب الموجب",
+    "descFr": "Capteur température liquide de refroidissement: Court-circuit au positif",
+    "descEn": "Engine Coolant Temp Sensor: Short to Battery",
+    "possibleCauses": [
+      "تلف حساس الحرارة",
+      "تلامس سلك الإشارة مع سلك كهرباء 24 فولت",
+      "تآكل في ضفيرة المحرك"
+    ],
+    "imagePath": "10013.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10015-03",
+    "code": "10015",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس ضغط التربو (Boost Pressure): الجهد مرتفع جداً",
+    "descFr": "Capteur pression de suralimentation: Tension trop haute",
+    "descEn": "Boost Pressure Sensor: Voltage too high",
+    "possibleCauses": [
+      "انسداد في خرطوم الحساس أو تراكم الزيوت",
+      "عطل داخلي في الحساس",
+      "مشكلة في توربين الشحن (التربو)"
+    ],
+    "imagePath": "10015.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10016-04",
+    "code": "10016",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس ضغط الزيت: الجهد منخفض جداً (دائرة قصر)",
+    "descFr": "Capteur pression d'huile: Tension trop basse",
+    "descEn": "Oil Pressure Sensor: Voltage too low",
+    "possibleCauses": [
+      "انخفاض حقيقي في مستوى الزيت (خطر)",
+      "تلف حساس ضغط الزيت",
+      "تماس أرضي في سلك الحساس"
+    ],
+    "imagePath": "10016.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "EDC-10019-01",
+    "code": "10019",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس درجة حرارة الوقود: الجهد خارج النطاق (مرتفع جداً)",
+    "descFr": "Capteur température carburant: Tension hors plage",
+    "descEn": "Fuel Temperature Sensor: Voltage out of range",
+    "possibleCauses": [
+      "سخونة زائدة في نظام الوقود",
+      "تلف حساس حرارة الوقود (NTC)",
+      "اتساخ فلتر الوقود بشكل حاد"
+    ],
+    "imagePath": "10019.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "EDC-1001C-03",
+    "code": "1001C",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس ضغط هواء المنفوذ (Ambient Pressure): عطل داخلي في وحدة EDC",
+    "descFr": "Capteur pression atmosphérique: Erreur interne ECU",
+    "descEn": "Atmospheric Pressure Sensor: ECU Internal Error",
+    "possibleCauses": [
+      "عطل في الحساس المدمج داخل كمبيوتر المحرك",
+      "تغير مفاجئ في الارتفاع الجغرافي يؤثر على المعايرة"
+    ],
+    "imagePath": "1001C.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-1001E-0E",
+    "code": "1001E",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "نظام SCR (يوريا): وجود ماء في الوقود أو مشكلة في حساس الرطوبة",
+    "descFr": "Système SCR: Eau dans le carburant détectée",
+    "descEn": "SCR System: Water in fuel detected",
+    "possibleCauses": [
+      "تراكم الماء في مرشح الوقود (الفلتر)",
+      "حساس فصل الماء تالف",
+      "وقود ذو جودة سيئة"
+    ],
+    "imagePath": "1001E.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10022-04",
+    "code": "10022",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس كرانك المحرك (Crankshaft Speed): غياب الإشارة أو عدم تطابقها",
+    "descFr": "Capteur régime moteur (Vilebrequin): Pas de signal",
+    "descEn": "Engine Speed Sensor (Crankshaft): No signal",
+    "possibleCauses": [
+      "تلف حساس الكرانك",
+      "المسافة غير صحيحة بين الحساس والترس",
+      "تآكل في ضفيرة المحرك الأمامية"
+    ],
+    "imagePath": "10022.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "EDC-10025-0E",
+    "code": "10025",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس عمود الكامات (Camshaft Speed): إشارة خاطئة أو غير متزامنة",
+    "descFr": "Capteur de phase (Arbre à cames): Signal erroné",
+    "descEn": "Camshaft Speed Sensor: Phase error",
+    "possibleCauses": [
+      "تلف حساس الكامات",
+      "خلل في توقيت المحرك (الكاتينة)",
+      "تراكم برادة حديد على رأس الحساس"
+    ],
+    "imagePath": "10025.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10031-01",
+    "code": "10031",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "ضغط مسطرة الوقود (Rail Pressure): ضغط مرتفع جداً يتجاوز حد الأمان",
+    "descFr": "Pression Rail: Trop haute (Plafond atteint)",
+    "descEn": "Fuel Rail Pressure: Too high",
+    "possibleCauses": [
+      "انسداد في خط الرجوع",
+      "عطل في صمام تنظيم الضغط (MPROP)",
+      "تلف حساس ضغط المسطرة"
+    ],
+    "imagePath": "10031.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "EDC-10032-02",
+    "code": "10032",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "صمام تنظيم ضغط الوقود (MPROP): تيار كهربائي غير صحيح",
+    "descFr": "Vanne de dosage carburant: Courant non plausible",
+    "descEn": "Fuel Metering Unit (MPROP): Implausible current",
+    "possibleCauses": [
+      "تلف في ملف الصمام الكهربائي",
+      "مقاومة عالية في الضفيرة",
+      "خلل في مخرج الطاقة بوحدة EDC"
+    ],
+    "imagePath": "10032.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10038-08",
+    "code": "10038",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "مراقبة ضغط المسطرة: الضغط منخفض جداً أثناء تشغيل المحرك",
+    "descFr": "Surveillance pression Rail: Pression trop basse",
+    "descEn": "Rail Pressure Monitoring: Pressure too low",
+    "possibleCauses": [
+      "تسريب في أحد الرشاشات (حاقنات)",
+      "ضعف طلمبة الديزل العالي",
+      "فلتر الديزل مسدود تماماً"
+    ],
+    "imagePath": "10038.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "EDC-10051-05",
+    "code": "10051",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "رشاش الأسطوانة رقم 1: دائرة مفتوحة (قطع في التوصيل)",
+    "descFr": "Injecteur Cylindre 1: Circuit ouvert",
+    "descEn": "Injector Cylinder 1: Open circuit",
+    "possibleCauses": [
+      "قطع في السلك الواصل للرشاش رقم 1",
+      "تلف الملف الكهربائي (Solenoid) داخل الرشاش",
+      "ارتخاء الفيشة فوق الرشاش"
+    ],
+    "imagePath": "10051.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10052-05",
+    "code": "10052",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "رشاش الأسطوانة رقم 2: دائرة مفتوحة",
+    "descFr": "Injecteur Cylindre 2: Circuit ouvert",
+    "descEn": "Injector Cylinder 2: Open circuit",
+    "possibleCauses": [
+      "مشكلة في ضفيرة الرشاشات تحت غطاء التاكيهات",
+      "تلف الرشاش رقم 2"
+    ],
+    "imagePath": "10052.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10071-04",
+    "code": "10071",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "تحكم مروحة التبريد (Fan Control): تماس أرضي أو حمل زائد",
+    "descFr": "Commande ventilateur: Court-circuit à la masse",
+    "descEn": "Fan Speed Control: Short to ground",
+    "possibleCauses": [
+      "عطل في الكلتش الكهربائي للمروحة (Viscotronic)",
+      "تماس في أسلاك المروحة مع الراديتر"
+    ],
+    "imagePath": "10071.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "EDC-1008C-03",
+    "code": "1008C",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "سخان وقود الديزل (Pre-heater): تماس مع القطب الموجب",
+    "descFr": "Préchauffage carburant: Court-circuit au positif",
+    "descEn": "Fuel Pre-heater: Short to battery",
+    "possibleCauses": [
+      "تلف ريلي (Relay) السخان",
+      "تماس في سلك السخان المدمج مع قاعدة الفلتر"
+    ],
+    "imagePath": "1008C.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "EDC-10093-02",
+    "code": "10093",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "مراقبة نظام الـ SCR (اليوريا): انحراف كبير في استهلاك اليوريا",
+    "descFr": "Surveillance SCR: Déviance de consommation d'urée",
+    "descEn": "SCR Monitoring: Urea consumption deviance",
+    "possibleCauses": [
+      "انسداد رشاش اليوريا",
+      "جودة سائل AdBlue منخفضة",
+      "عطل في مضخة اليوريا"
+    ],
+    "imagePath": "10093.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "SCR-003DE7-07",
+    "code": "03DE7",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "انسداد في خط رجوع اليوريا (AdBlue): السائل لا يعود للخزان بشكل صحيح",
+    "descFr": "Ligne de retour d'urée obstruée",
+    "descEn": "Back flow line blocked",
+    "possibleCauses": [
+      "انطواء في خرطوم الرجوع",
+      "تجمد سائل اليوريا داخل الأنابيب",
+      "انسداد في صمام العودة داخل المضخة"
+    ],
+    "imagePath": "03DE7.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "SCR-003DE8-02",
+    "code": "03DE8",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "فشل خفض ضغط اليوريا عند التشغيل: الصمام عالق في وضع الغلق",
+    "descFr": "Pression d'urée non réduite au démarrage",
+    "descEn": "Urea pressure not reduced during start up",
+    "possibleCauses": [
+      "عطل في صمام التحكم بالضغط",
+      "انسداد ميكانيكي في وحدة الضخ",
+      "خلل في إشارة الحساس"
+    ],
+    "imagePath": "03DE8.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "SCR-003DEB-01",
+    "code": "03DEB",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "انخفاض مستوى اليوريا (تحذير المستوى الأول): الخزان يقترب من الفراغ",
+    "descFr": "Niveau d'urée bas (Alerte 1)",
+    "descEn": "Low UREA level 1 (warning)",
+    "possibleCauses": [
+      "نقص سائل AdBlue في الخزان",
+      "عطل في عوامة خزان اليوريا",
+      "تسريب في الخزان"
+    ],
+    "imagePath": "03DEB.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "ETC-40312-05",
+    "code": "40312",
+    "truckModel": "ETC ZF ET2 (Gearbox)",
+    "descAr": "حساس اختيار النطاق (Range): دائرة مفتوحة في الضفيرة",
+    "descFr": "Capteur de plage (Range): Circuit ouvert",
+    "descEn": "Range sensor: Open circuit",
+    "possibleCauses": [
+      "قطع في أسلاك حساس الجير",
+      "فيشة الجير (الفتيس) مفصولة أو بها رطوبة",
+      "تلف الحساس المدمج في وحدة الـ GS"
+    ],
+    "imagePath": "40312.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ETC-40321-06",
+    "code": "40321",
+    "truckModel": "ETC ZF ET2 (Gearbox)",
+    "descAr": "صمام تعشيق السرعات العالية/المنخفضة: تماس مع الأرضي",
+    "descFr": "Électrovanne Splitter High/Low: Court-circuit à la masse",
+    "descEn": "Splitter High/Low valve: Short to ground",
+    "possibleCauses": [
+      "تلف في ملف الصمام الكهربائي للسرعات",
+      "احتكاك الضفيرة بجسم ناقل الحركة",
+      "مشكلة في وحدة التحكم بالفتيس"
+    ],
+    "imagePath": "40321.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-10098-00",
+    "code": "10098",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "انحراف في ضغط الهواء داخل مجمع السحب (المانيفولد)",
+    "descFr": "Déviance de pression d'air d'admission",
+    "descEn": "Intake air pressure deviance",
+    "possibleCauses": [
+      "انسداد في فلتر الهواء",
+      "تهريب هواء في خراطيم التربو (Intercooler)",
+      "عطل في حساس ضغط المانيفولد (Boost Sensor)"
+    ],
+    "imagePath": "10098.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "BC-2215A-02",
+    "code": "2215A",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "إشارة غير صحيحة من مفتاح تشغيل المحرك (السويتش)",
+    "descFr": "Signal incorrect du commutateur d'allumage",
+    "descEn": "Ignition switch: Erroneous signal",
+    "possibleCauses": [
+      "تلف في قلب السويتش (Contact)",
+      "تذبذب في جهد الكهرباء عند التشغيل",
+      "محاولة تشغيل بمفتاح غير مبرمج"
+    ],
+    "imagePath": "2215A.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22160-03",
+    "code": "22160",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "حساس مستوى سائل التبريد: الجهد مرتفع (دائرة مفتوحة)",
+    "descFr": "Capteur niveau liquide refroidissement: Tension haute",
+    "descEn": "Coolant Level Sensor: Voltage high / Open circuit",
+    "possibleCauses": [
+      "نقص ماء الراديتر",
+      "انفصال فيشة حساس القربة",
+      "تلف الحساس نفسه"
+    ],
+    "imagePath": "22160.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "SCR-003DF3-0C",
+    "code": "03DF3",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "عطل في مجموعة التحكم في تسخين نظام اليوريا",
+    "descFr": "Erreur groupe chauffage urée",
+    "descEn": "Group error path Urea heating control",
+    "possibleCauses": [
+      "تلف أحد سخانات أنابيب AdBlue",
+      "خلل في ريلي تسخين اليوريا",
+      "تجمد النظام في الأجواء الباردة جداً"
+    ],
+    "imagePath": "03DF3.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "EDC-100AF-04",
+    "code": "100AF",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس موضع صمام الـ EGR: لا توجد إشارة أو اتصال",
+    "descFr": "Capteur position vanne EGR: Pas de signal",
+    "descEn": "EGR Position Sensor: No signal",
+    "possibleCauses": [
+      "تراكم الكربون على صمام الـ EGR مما منعه من الحركة",
+      "فصل فيشة صمام إعادة تدوير الغازات",
+      "تلف الحساس المدمج في الصمام"
+    ],
+    "imagePath": "100AF.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "SCR-003DEA-07",
+    "code": "03DEA",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "انسداد في خط ضغط اليوريا (AdBlue): السائل لا يصل للمحقن",
+    "descFr": "Ligne de pression d'urée obstruée",
+    "descEn": "Pressure line blocked",
+    "possibleCauses": [
+      "تراكم بلورات اليوريا داخل الخراطيم",
+      "انسداد الفلتر الصغير داخل وحدة الضخ",
+      "انطواء في الأنبوب الواصل بين المضخة والمحقن"
+    ],
+    "imagePath": "03DEA.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "SCR-003DF0-0C",
+    "code": "03DF0",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "عطل عام في مجموعة التحكم بحقن اليوريا (SCR)",
+    "descFr": "Erreur générale de commande d'injection d'urée",
+    "descEn": "Group error path UREA injection control",
+    "possibleCauses": [
+      "فشل في عملية معايرة كمية الحقن",
+      "عطل في الصمام الكهربائي للمحقن",
+      "خلل في التوصيلات الكهربائية لمجموعة SCR"
+    ],
+    "imagePath": "03DF0.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "SCR-003DF1-0C",
+    "code": "03DF1",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "عطل في مجموعة التحكم بالهواء لنظام الـ SCR",
+    "descFr": "Erreur groupe de commande d'air (SCR)",
+    "descEn": "Group error path Air control",
+    "possibleCauses": [
+      "تسريب في هواء نظام اليوريا",
+      "انسداد صمام الهواء المساعد",
+      "ضعف ضغط الهواء الواصل لوحدة DCU"
+    ],
+    "imagePath": "03DF1.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "IC-10101-04",
+    "code": "10101",
+    "truckModel": "Instrument Cluster (IC)",
+    "descAr": "غياب رسائل شبكة الـ CAN من لوحة العدادات (Bus-Off)",
+    "descFr": "Absence de messages CAN de l'instrumentation",
+    "descEn": "Instrument Cluster CAN: No messages / Bus-Off",
+    "possibleCauses": [
+      "فصل فيشة لوحة العدادات الخلفية",
+      "قطع في ضفيرة شبكة البيانات خلف التابلوه",
+      "عطل داخلي في لوحة العدادات"
+    ],
+    "imagePath": "10101.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "IC-10102-03",
+    "code": "10102",
+    "truckModel": "Instrument Cluster (IC)",
+    "descAr": "حساس مستوى الوقود (العوامة): تماس مع القطب الموجب",
+    "descFr": "Capteur niveau carburant: Court-circuit au positif",
+    "descEn": "Fuel Level Sensor: Short to Battery",
+    "possibleCauses": [
+      "تآكل في أسلاك العوامة فوق الخزان",
+      "عطل في مقاومة العوامة الداخلية",
+      "تلامس سلك الإشارة مع سلك كهرباء"
+    ],
+    "imagePath": "10102.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "EDC-100B1-03",
+    "code": "100B1",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس حرارة غازات العادم قبل المحفز: الجهد مرتفع جداً",
+    "descFr": "Capteur temp. échappement avant catalyseur: Tension haute",
+    "descEn": "Exhaust Gas Temp Sensor (Pre-cat): Voltage high",
+    "possibleCauses": [
+      "احتراق الحساس نتيجة حرارة مفرطة",
+      "دائرة مفتوحة في سلك الحساس",
+      "تلف في فيشة الحساس"
+    ],
+    "imagePath": "100B1.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "EDC-100B5-04",
+    "code": "100B5",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "حساس أكسيد النيتروجين (NOx Sensor): لا توجد إشارة اتصال",
+    "descFr": "Capteur NOx: Pas de signal de communication",
+    "descEn": "NOx Sensor: No communication signal",
+    "possibleCauses": [
+      "تلف رأس حساس الـ NOx",
+      "انقطاع التغذية الكهربائية عن الحساس (24V)",
+      "عطل في وحدة المعالجة الخاصة بالحساس نفسه"
+    ],
+    "imagePath": "100B5.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "BC-22171-08",
+    "code": "22171",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "حساس تآكل فحمات الفرامل (Brake Wear): إشارة غير منطقية",
+    "descFr": "Capteur d'usure des freins: Signal non plausible",
+    "descEn": "Brake Wear Sensor: Implausible signal",
+    "possibleCauses": [
+      "وصول الفحمات لحد التآكل النهائي",
+      "تلف في سلك الحساس عند العجلة",
+      "تركيب فحمات بدون حساس أو بنوع غير مطابق"
+    ],
+    "imagePath": "22171.jpg",
+    "severity": "Medium"
+  },
+  {
+    "id": "BC-22175-02",
+    "code": "22175",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "مفتاح فرامل اليد (Parking Brake): إشارة متداخلة أو خاطئة",
+    "descFr": "Contacteur frein à main: Signal erroné",
+    "descEn": "Parking Brake Switch: Erroneous signal",
+    "possibleCauses": [
+      "عطل في الحساس الهوائي لفرامل اليد",
+      "تآكل في الوصلات الكهربائية",
+      "تفعيل الفرامل أثناء السير بسرعة عالية"
+    ],
+    "imagePath": "22175.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "ETC-40331-01",
+    "code": "40331",
+    "truckModel": "ETC ZF ET2 (Gearbox)",
+    "descAr": "صمام التعشيق الرئيسي (Main Gate): الجهد خارج النطاق",
+    "descFr": "Électrovanne de passage principale: Tension hors plage",
+    "descEn": "Main Gate solenoid valve: Voltage out of range",
+    "possibleCauses": [
+      "عطل في صمام تعشيق التروس الرئيسي",
+      "ضعف في الجهد الكهربائي الواصل للجير",
+      "خلل في وحدة التحكم الإلكترونية للفتيس"
+    ],
+    "imagePath": "40331.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "SCR-003DEC-01",
+    "code": "03DEC",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "انخفاض مستوى اليوريا (تحذير المستوى الثاني): الخزان فارغ تقريباً",
+    "descFr": "Niveau d'urée bas (Alerte 2)",
+    "descEn": "Low UREA level 2 (warning)",
+    "possibleCauses": [
+      "نفاذ سائل AdBlue تماماً",
+      "عطل حاد في حساس المستوى",
+      "تسريب كبير في خزان اليوريا"
+    ],
+    "imagePath": "03DEC.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "SCR-003DF2-0C",
+    "code": "03DF2",
+    "truckModel": "UDS DCU15 (SCR System)",
+    "descAr": "عطل في مجموعة التحكم بحرارة المحفز (Catalyst Temperature)",
+    "descFr": "Erreur groupe température catalyseur",
+    "descEn": "Group error path catalyst temperature",
+    "possibleCauses": [
+      "تلف حساسات الحرارة قبل أو بعد المحفز",
+      "خلل في تمديدات السخانات الكهربائية لنظام SCR",
+      "انسداد في دبة البيئة (Catalyst)"
+    ],
+    "imagePath": "03DF2.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "BC-22179-04",
+    "code": "22179",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "حساس ضغط خزان هواء الفرامل (الدائرة 3): لا توجد إشارة",
+    "descFr": "Capteur pression d'air (C3): Pas de signal",
+    "descEn": "Air Pressure Sensor (Circuit 3): No signal",
+    "possibleCauses": [
+      "تلف حساس الضغط للدائرة الثالثة",
+      "انقطاع سلك الإشارة المتجه للكمبيوتر المركزى",
+      "فشل في تزويد الحساس بالطاقة"
+    ],
+    "imagePath": "22179.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "EDC-100D1-0E",
+    "code": "100D1",
+    "truckModel": "EDC7UC31 Engine Control",
+    "descAr": "مراقبة نظام الحقن: كمية الوقود المحقونة خارج المعايرة",
+    "descFr": "Surveillance injection: Débit hors tolérance",
+    "descEn": "Injection monitoring: Delivery out of range",
+    "possibleCauses": [
+      "تآكل في رؤوس الرشاشات",
+      "عدم استقرار ضغط مسطرة الوقود",
+      "خلل في برمجة كميات الحقن (IMA Code)"
+    ],
+    "imagePath": "100D1.jpg",
+    "severity": "High"
+  },
+  {
+    "id": "CAN-00000-02",
+    "code": "CAN-BUS",
+    "truckModel": "Communication Network",
+    "descAr": "إشارة خاطئة أو تداخل في شبكة SAE J1939 (CAN High/Low)",
+    "descFr": "Erreur de signal sur le bus CAN J1939",
+    "descEn": "SAE J1939 erroneous signal",
+    "possibleCauses": [
+      "تلامس بين سلكي الـ CAN الأخضر والأصفر",
+      "وجود رسائل كثيرة جداً تسبب ازدحام الشبكة",
+      "تلف مقاومة النهاية (Termination Resistor)"
+    ],
+    "imagePath": "CAN.jpg",
+    "severity": "Critical"
+  },
+  {
+    "id": "BC-22180-05",
+    "code": "22180",
+    "truckModel": "Body Controller IBC2",
+    "descAr": "مصباح الرجوع للخلف (الريوس): دائرة مفتوحة",
+    "descFr": "Feu de recul: Circuit ouvert",
+    "descEn": "Reverse Light: Open circuit",
+    "possibleCauses": [
+      "احتراق لمبة الريوس",
+      "عطل في مفتاح التعشيق الموجود على الجير",
+      "قطع في سلك الإشارة الخلفي"
+    ],
+    "imagePath": "22180.jpg",
+    "severity": "Low"
   }
 ]
